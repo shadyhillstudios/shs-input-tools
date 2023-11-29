@@ -1,0 +1,36 @@
+body, html {
+    font-size: 10px;
+    font-family: sans-serif;
+    font-weight: 400;
+}
+
+.shs-input-element {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    label {
+        font-size: 1.2rem;
+        margin-bottom: .4rem;
+        font-weight: 300;
+    }
+
+    input, textarea, select {
+        border-radius: 3px;
+        border: 1px solid #CCC;
+        margin: 0;
+        font-size: 1.5rem;
+        padding: .2rem .4rem;
+    }
+
+    .helper-text {
+        color: #777;
+        margin: .4rem 0;
+        &.invisible {
+            visibility: hidden;
+        }
+        &.visible {
+            visibility: visible;
+        }
+    }
+}
