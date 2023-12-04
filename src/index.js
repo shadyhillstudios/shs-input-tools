@@ -8,7 +8,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <>
         <InputElement
-            type="text"
+            type="checkbox"
+            name="example"
             id="example"
             label="Sample Input"
             placeholder="Enter Text"

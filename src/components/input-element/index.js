@@ -6,6 +6,8 @@ import HelperText from './elements/helper-text'
 import TextInput from './text-input'
 import TextAreaInput from './text-area-input'
 import ValueSelectInput from './value-select-input'
+import CheckboxInput from './checkbox-input'
+import HiddenInput from './hidden-input'
 
 import './assets/scss/input-element.scss'
 
@@ -62,6 +64,10 @@ const InputElement = ({ id, type, label, defaultValue, onChange, onFocus, onBlur
             return <TextAreaInput {...commonProps} />
         case 'valueSelect':
             return <ValueSelectInput {...commonProps} />
+        case 'checkbox':
+            return <CheckboxInput {...commonProps} />
+        case 'hidden':
+            return <HiddenInput {...commonProps} />
         default:
             return <TextInput {...commonProps} />
         }
