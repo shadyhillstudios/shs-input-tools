@@ -8,7 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <>
         <InputElement
-            type="checkbox"
+            type="multiSelect"
             name="example"
             id="example"
             label="Sample Input"

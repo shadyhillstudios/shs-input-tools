@@ -6,16 +6,28 @@ import HelperText from './elements/helper-text'
 import TextInput from './text-input'
 import TextAreaInput from './text-area-input'
 import ValueSelectInput from './value-select-input'
+import SelectInput from './select-input'
+import MultiSelectInput from './multi-select-input'
 import CheckboxInput from './checkbox-input'
-import HiddenInput from './hidden-input'
+import CheckboxToggle from './checkbox-toggle'
+
 
 import './assets/scss/input-element.scss'
+import './assets/icons'
 
 const InputElement = ({ id, type, label, defaultValue, onChange, onFocus, onBlur, extraClass, placeholder, required, disabled, min, max, readOnly, helperText, options, includeInitialValue, initialValueLabel }) => {
     const [value, setValue] = useState(defaultValue !== 'undefined' ? defaultValue : '')
     const [isActive, setIsActive] = useState(false)
 
     const handleChange = (evt) => {
+        if (evt.target.type === 'checkbox') {
+            const tempValue = evt.target.checked ? evt.target.value : true
+            setValue(tempValue)
+            if (onChange) {
+                onChange(id, tempValue)
+            }
+            return
+        }
         const tempValue = evt.target.value
         setValue(tempValue)
         if (onChange) {
@@ -55,7 +67,7 @@ const InputElement = ({ id, type, label, defaultValue, onChange, onFocus, onBlur
         min: min || null,
         max: max || null
     }
-
+// make case checkbox that isn't really a checkbox but an on/off switch using Font Awesome icons + hidden input
     const renderInput = () => {
         switch (type) {
         case 'text':
@@ -64,10 +76,15 @@ const InputElement = ({ id, type, label, defaultValue, onChange, onFocus, onBlur
             return <TextAreaInput {...commonProps} />
         case 'valueSelect':
             return <ValueSelectInput {...commonProps} />
+        case 'select':
+            return <SelectInput {...commonProps} />
+        case 'multiSelect':
+            const { type, ...multiSelectProps } = commonProps
+            return <MultiSelectInput {...multiSelectProps} />
         case 'checkbox':
             return <CheckboxInput {...commonProps} />
-        case 'hidden':
-            return <HiddenInput {...commonProps} />
+        case 'checkboxToggle':
+            return <CheckboxToggle {...commonProps} />
         default:
             return <TextInput {...commonProps} />
         }

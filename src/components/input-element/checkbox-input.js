@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 
-const CheckboxInput = (props) => {
+const CheckboxInput = ({ onChange, checked, ...props }) => {
+    const [check, setCheck] = useState(false)
+
+    const handleCheckboxClick = (event) => {
+        setCheck(event.target.checked)
+    }
     return (
-        <input
-            type="checkbox"
-            checked={useState(props.value)}
-            onClick={(evt) => evt.stopPropagation()}
-            {...props}
-        />
+        <>
+                <input type="checkbox" checked={check} onChange={handleCheckboxClick}
+                {...props} />
+        </>
     )
-}
+    }
 
 export default CheckboxInput
