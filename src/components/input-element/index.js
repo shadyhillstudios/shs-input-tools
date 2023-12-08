@@ -10,6 +10,7 @@ import SelectInput from './select-input'
 import MultiSelectInput from './multi-select-input'
 import CheckboxInput from './checkbox-input'
 import CheckboxToggle from './checkbox-toggle'
+import RenderKeywordList from './keyword-input'
 
 
 import './assets/scss/input-element.scss'
@@ -85,6 +86,8 @@ const InputElement = ({ id, type, label, defaultValue, onChange, onFocus, onBlur
             return <CheckboxInput {...commonProps} />
         case 'checkboxToggle':
             return <CheckboxToggle {...commonProps} />
+        case 'keyword':
+            return <RenderKeywordList {...commonProps} />
         default:
             return <TextInput {...commonProps} />
         }

@@ -8,7 +8,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
     <>
         <InputElement
-            type="multiSelect"
+            type="keyword"
             name="example"
             id="example"
             label="Sample Input"
