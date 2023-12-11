@@ -11,12 +11,13 @@ import MultiSelectInput from './multi-select-input'
 import CheckboxInput from './checkbox-input'
 import CheckboxToggle from './checkbox-toggle'
 import RenderKeywordList from './keyword-input'
+import RangeSlider from './range-input'
 
 
 import './assets/scss/input-element.scss'
 import './assets/icons'
 
-const InputElement = ({ id, type, label, defaultValue, onChange, onFocus, onBlur, extraClass, placeholder, required, disabled, min, max, readOnly, helperText, options, includeInitialValue, initialValueLabel }) => {
+const InputElement = ({ id, type, label, defaultValue, onChange, onFocus, onBlur, extraClass, placeholder, required, disabled, min, max, step, readOnly, helperText, options, includeInitialValue, initialValueLabel }) => {
     const [value, setValue] = useState(defaultValue !== 'undefined' ? defaultValue : '')
     const [isActive, setIsActive] = useState(false)
 
@@ -66,7 +67,9 @@ const InputElement = ({ id, type, label, defaultValue, onChange, onFocus, onBlur
         required: required || false,
         disabled: disabled || false,
         min: min || null,
-        max: max || null
+        max: max || null,
+        step: step || null,
+
     }
 // make case checkbox that isn't really a checkbox but an on/off switch using Font Awesome icons + hidden input
     const renderInput = () => {
@@ -88,6 +91,8 @@ const InputElement = ({ id, type, label, defaultValue, onChange, onFocus, onBlur
             return <CheckboxToggle {...commonProps} />
         case 'keyword':
             return <RenderKeywordList {...commonProps} />
+        case 'range':
+            return <RangeSlider {...commonProps} />
         default:
             return <TextInput {...commonProps} />
         }
