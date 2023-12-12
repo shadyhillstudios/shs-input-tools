@@ -17,7 +17,7 @@ const MultiSelectInput = ({ value, options, onChange, ...props }) => {
 { options.map((option, index) => {
     return (
         <div key={index} className="multi-select-option">
-            <input type="checkbox" value={option.value} checked={value.indexOf(option.value) !== -1} onChange={() => handleChange(option)} />
+            <input type="checkbox" className="checkbox-button" value={option.value} checked={value.indexOf(option.value) !== -1} onChange={() => handleChange(option)} />
             <label>{option.label}</label>
         </div>
     )

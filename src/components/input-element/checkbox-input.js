@@ -7,9 +7,10 @@ const CheckboxInput = ({ onChange, checked, ...props }) => {
         setCheck(event.target.checked)
     }
     return (
-        <>
-                <input type="checkbox" checked={check} onChange={handleCheckboxClick}
+        <>      <div className="checkbox-input">
+                <input type="checkbox" className="checkbox" checked={check} onChange={handleCheckboxClick}
                 {...props} />
+                </div>
         </>
     )
     }

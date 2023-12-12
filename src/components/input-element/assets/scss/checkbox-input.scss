@@ -1,0 +1,37 @@
+.checkbox-input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: .4rem .8rem;
+    cursor: pointer;
+    &:hover {
+        background-color: #EEE;
+    }
+    &.selected {
+        background-color: #DDD;
+    }
+    label {
+        font-size: 1.5rem;
+        font-weight: 300;
+        margin-left: .5rem;
+    }
+    input {
+        position: relative;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+        border-radius: 50%;
+        &:hover {
+            background-color: #CCC
+    }
+&:checked {
+    background-color: #367AF6;
+    &:hover {
+        background-color: #4B91F7;
+    }
+}    
+}
+}
