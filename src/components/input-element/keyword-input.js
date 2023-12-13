@@ -37,12 +37,11 @@ const RenderKeywordList = (props) => {
             <input
                 type="text"
                 id="tempKeyword"
-                className="form-control"
                 value={tempValue}
                 onChange={(e) => setTempValue(e.target.value)}
                 onKeyDown={handleTempSave}
                 placeholder={props.placeholder} />
-            <div className="selections left-align">{allKeywords}</div>
+            <div className="selections">{allKeywords}</div>
             <input
                 type="hidden"
                 id={props.id}

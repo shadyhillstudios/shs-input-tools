@@ -11,6 +11,7 @@ const RangeSlider = (props) => {
                     max={props.max}
                     value={props.value}
                     step={props.step}
+                    class="slider"
                     {...props} />
                 <span>{props.value}</span>
             </div>
