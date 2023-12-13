@@ -1,0 +1,19 @@
+.toggle-wrapper {
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 0.5em;
+
+    .fa-xl {
+    font-size: 3em;
+    float: left;
+    display: flex;
+    position: relative;
+    color: #aaa;
+    }
+
+    label {
+        margin-left: .5em;
+    }
+    }

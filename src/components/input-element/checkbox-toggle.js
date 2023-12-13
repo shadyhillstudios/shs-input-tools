@@ -8,7 +8,12 @@ const CheckboxToggle = (props) => {
             setCheck(prev => !prev)
     }
     return (
-        <>      {check ? <FontAwesomeIcon icon="square-check" onClick={handleCheckboxClick} /> : <FontAwesomeIcon icon={['far','square']} onClick={handleCheckboxClick} />}
+        <>   
+        <div className="toggle-wrapper">   
+        {check ? <FontAwesomeIcon icon="square-check" size="xl" onClick={handleCheckboxClick} /> : <FontAwesomeIcon icon={['far','square']} size="xl" onClick={handleCheckboxClick} /> 
+        }
+        <label>{props.value}</label>
+        </div>
         </>
     )
     }
