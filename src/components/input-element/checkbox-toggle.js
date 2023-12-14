@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const CheckboxToggle = (props) => {
     const [check, setCheck] = useState(false)
@@ -10,7 +9,7 @@ const CheckboxToggle = (props) => {
     return (
         <>   
         <div className="toggle-wrapper">   
-        {check ? <FontAwesomeIcon icon="square-check" size="xl" onClick={handleCheckboxClick} /> : <FontAwesomeIcon icon={['far','square']} size="xl" onClick={handleCheckboxClick} /> 
+        {check ? <div className="square" onClick={handleCheckboxClick} /> : <div className="square checked" onClick={handleCheckboxClick} /> 
         }
         <label>{props.value}</label>
         </div>

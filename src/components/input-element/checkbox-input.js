@@ -10,6 +10,7 @@ const CheckboxInput = ({ onChange, checked, ...props }) => {
         <>      <div className="checkbox-input">
                 <input type="checkbox" className="checkbox" checked={check} onChange={handleCheckboxClick}
                 {...props} />
+                <label>{props.label}</label>
                 </div>
         </>
     )

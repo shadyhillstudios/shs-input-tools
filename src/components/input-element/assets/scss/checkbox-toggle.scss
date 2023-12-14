@@ -5,12 +5,27 @@
     align-items: center;
     margin-top: 0.5em;
 
-    .fa-xl {
-    font-size: 3em;
+    .square {
+    width: 2em;
+    height: 2em;
+    border: 3px solid black;
     float: left;
     display: flex;
     position: relative;
-    color: #aaa;
+    &.checked {
+        &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: .15em;
+        left: .05em;
+        width: 3em;
+        height: 3em;
+        background-image: url(../check-solid.svg);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        }
+    }
     }
 
     label {

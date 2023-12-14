@@ -14,9 +14,8 @@ import RenderKeywordList from './keyword-input'
 import RangeSlider from './range-input'
 import SearchInput from './search-input'
 
-
 import './assets/scss/input-element.scss'
-import './assets/icons'
+
 
 const InputElement = ({ id, type, label, defaultValue, onChange, onFocus, onBlur, extraClass, placeholder, required, disabled, min, max, step, readOnly, helperText, options, includeInitialValue, initialValueLabel, multiple, accept, minLength, maxLength, arialabel, pattern }) => {
     const [value, setValue] = useState(defaultValue !== 'undefined' ? defaultValue : '')
@@ -49,6 +48,14 @@ const InputElement = ({ id, type, label, defaultValue, onChange, onFocus, onBlur
         setIsActive(false)
         if (onBlur) {
             onBlur(evt)
+        }
+    }
+
+    const renderLabel = () => {
+        if (type === 'checkbox') {
+            return null
+        } else {
+            return <Label label={label} required={required} />
         }
     }
 
@@ -93,7 +100,7 @@ const InputElement = ({ id, type, label, defaultValue, onChange, onFocus, onBlur
             const { type, ...multiSelectProps } = commonProps
             return <MultiSelectInput {...multiSelectProps} />
         case 'checkbox':
-            return <CheckboxInput {...commonProps} />
+            return <CheckboxInput {...commonProps} label={label} />
         case 'checkboxToggle':
             return <CheckboxToggle {...commonProps} />
         case 'keyword':
@@ -106,10 +113,11 @@ const InputElement = ({ id, type, label, defaultValue, onChange, onFocus, onBlur
             return <TextInput {...commonProps} />
         }
     }
+// add label ternary to renderInput for checkbox as {renderLabel()}
 
     return (
         <div className="shs-input-element">
-            <Label label={label} required={required} />
+            {renderLabel()}
             {renderInput()}
             <HelperText helperText={helperText} isActive={isActive} />
         </div>
