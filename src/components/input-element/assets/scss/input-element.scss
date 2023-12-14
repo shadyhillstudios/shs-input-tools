@@ -1,0 +1,59 @@
+@import "multi-select.scss";
+@import "checkbox-input.scss";
+@import "keyword-input.scss";
+@import "checkbox-toggle.scss";
+@import "range-input.scss";
+
+body, html {
+    font-size: 10px;
+    font-family: sans-serif;
+    font-weight: 400;
+}
+
+.shs-input-element {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    label {
+        font-size: 1.2rem;
+        margin-bottom: .4rem;
+        font-weight: 300;
+    }
+
+    input, textarea, select {
+        border-radius: 3px;
+        border: 1px solid #CCC;
+        margin: 0;
+        font-size: 1.5rem;
+        padding: .2rem .4rem;
+    }
+
+    .helper-text {
+        color: #777;
+        margin: .4rem 0;
+        &.invisible {
+            visibility: hidden;
+        }
+        &.visible {
+            visibility: visible;
+        }
+    }
+
+    button {
+            display: flex;
+            flex-direction: column;
+            margin-top: .5em;
+            align-items: center;
+            padding: 6px 14px;
+            border-radius: 6px;
+            border: none;
+            color: #fff;
+            background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+            background-origin: border-box;
+            box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+}
+}
